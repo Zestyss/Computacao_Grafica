@@ -6,8 +6,8 @@ public class TelaGrafica extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        int largura = 640;
-        int altura = 480;
+        int largura = 800;
+        int altura = 600;
         int escala = 100;
 
         // Configurar a cor de fundo para branca
@@ -50,7 +50,7 @@ public class TelaGrafica extends JPanel {
         JFrame frame = new JFrame("Tela Gráfica");
         TelaGrafica tela = new TelaGrafica();
         frame.add(tela);
-        frame.setSize(640, 480);
+        frame.setSize(800, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
