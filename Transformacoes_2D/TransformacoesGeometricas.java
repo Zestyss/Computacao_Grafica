@@ -26,18 +26,16 @@ public class TransformacoesGeometricas extends JFrame {
     private Path2D.Double createPolygon() {
         Path2D.Double polygon = new Path2D.Double();
 
-        // Adicione aqui os pontos para formar o polígono
         polygon.moveTo(100, 100);
         polygon.lineTo(150, 100);
         polygon.lineTo(200, 150);
-        // ...
 
         return polygon;
     }
 
     private void drawPolygon(Graphics2D g2d, Path2D.Double polygon, Color color) {
         g2d.setColor(color);
-        g2d.fill(polygon);  // Alteração aqui
+        g2d.fill(polygon);
     }
 
     private void drawAxes(Graphics2D g2d) {
@@ -62,13 +60,11 @@ public class TransformacoesGeometricas extends JFrame {
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
-        // Configurações iniciais
         g2d.setBackground(Color.WHITE);
         g2d.clearRect(0, 0, WIDTH, HEIGHT);
 
         drawAxes(g2d);
 
-        // Transformações para a letra a) (R, T e E)
         AffineTransform transformA = new AffineTransform();
         transformA.rotate(Math.toRadians(60), WIDTH / 2, HEIGHT / 2);
         transformA.translate(1 * UNIDADE, 2 * UNIDADE);
@@ -76,7 +72,6 @@ public class TransformacoesGeometricas extends JFrame {
 
         applyTransformationsAndDraw(g2d, transformA, Color.RED);
 
-        // Transformações para a letra b) (E, R e T)
         AffineTransform transformB = new AffineTransform();
         transformB.scale(2, 2);
         transformB.rotate(Math.toRadians(60), WIDTH / 2, HEIGHT / 2);
